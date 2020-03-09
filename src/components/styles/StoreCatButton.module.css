@@ -1,0 +1,30 @@
+.storeButton {
+  position: absolute;
+  top: .2rem;
+  right: .2rem;
+  outline: none;
+  font-weight: bold;
+  font-style: italic;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.deleteButton {
+  color: red;
+}
+
+.deleteButton:hover {
+  color: white;
+  background-color: red;
+}
+
+.restoreButton {
+  color: green;
+}
+
+.restoreButton:hover {
+  color: white;
+  background-color: green;
+}

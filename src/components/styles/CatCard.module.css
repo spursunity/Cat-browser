@@ -1,0 +1,27 @@
+.card {
+  margin-bottom: .3rem;
+  padding: .5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.workingCard {
+  border: 2px solid black;
+}
+
+.currentCard {
+  border: 2px solid green;
+  color: green;
+}
+
+.disabledCard {
+  border: 2px solid rgba(0, 0, 0, .15);
+  color: rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+
+.workingCard:hover {
+  border: 2px solid white;
+  color: white;
+  background-color: blue;
+}

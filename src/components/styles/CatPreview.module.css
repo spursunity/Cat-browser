@@ -1,0 +1,14 @@
+.previewDashboard {
+  border-left: 2px solid blue;
+  padding: 1rem .5rem;
+  width: 70%;
+}
+
+.photoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  border-radius: 50%;
+}
