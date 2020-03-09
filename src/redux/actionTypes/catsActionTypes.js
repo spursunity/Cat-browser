@@ -1,0 +1,12 @@
+/**
+ * Action types for the CatsPage
+ */
+
+export const CATS_ACTION_TYPES = {
+  ADD_CATS: 'ADD_CATS',
+  ADD_CATS_ASYNC: 'ADD_CATS_ASYNC',
+  ADD_BIO: 'ADD_BIO',
+  ADD_BIO_ASYNC: 'ADD_BIO_ASYNC',
+  DELETE_CAT: 'DELETE_CAT',
+  RESTORE_CAT: 'RESTORE_CAT',
+};
