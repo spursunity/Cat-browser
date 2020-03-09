@@ -1,0 +1,4 @@
+.catsPage {
+  display: flex;
+  justify-content: space-between;
+}
