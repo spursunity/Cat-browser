@@ -16,10 +16,17 @@ const { CATS_ACTION_TYPES } = actionTypes;
 
 async function fetchAsyncData(url) {
   try {
-    const response = await fetch(url);
-    const data = await response.json();
+    const responseJSON = await fetch(url, {
+      mode: 'cors',
+    });
+    
+    const response = await responseJSON.json();
+
+    if (response.data) {
+      return response.data;
+    }
   
-    return data;
+    return response;
   } catch (e) {
     throw new Error(`Fetching data error: ${e.message}`);
   }
@@ -31,9 +38,7 @@ async function fetchAsyncData(url) {
  */
 function* fetchCatsData() {
   try {
-    const catsDataUrl = `${URLS.BASE_PATH}${URLS.ROUTES.CATS_LIST}`;
-
-    const catsData = yield call(fetchAsyncData, catsDataUrl);
+    const catsData = yield call(fetchAsyncData, URLS.ROUTES.CATS_LIST);
     yield put({ type: CATS_ACTION_TYPES.ADD_CATS_ASYNC, payload: catsData });
   } catch (e) {
     yield put({ type: CATS_ACTION_TYPES.ADD_CATS_ASYNC, payload: null });
@@ -47,9 +52,8 @@ function* fetchCatsData() {
 function* addCatBio(action) {
   try {
     const { name, more } = action.payload;
-    const catBioUrl = `${URLS.BASE_PATH}${more}`;
 
-    const catBio = yield call(fetchAsyncData, catBioUrl);
+    const catBio = yield call(fetchAsyncData, more);
 
     if (catBio) {
       catBio.name = name;
